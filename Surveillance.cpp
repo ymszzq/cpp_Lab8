@@ -4,7 +4,7 @@
 
 #include <algorithm>
 #include "Surveillance.h"
-
+//constructor take in file path and generate map
 Surveillance::Surveillance(string filePath) {
     string name;
     filePath = "../"+filePath;
@@ -19,7 +19,8 @@ Surveillance::Surveillance(string filePath) {
 }
 
 
-
+//this function is helper funtion to seperate a string with deliminator space
+//@param locationString is the string of locations.
 set<string> Surveillance::seperateString(string locationString){
     set<string> locations;
     string delimiter = " ";
@@ -32,12 +33,12 @@ set<string> Surveillance::seperateString(string locationString){
     }
     return locations;
 }
-
+//this function will print name in order
 void Surveillance::printNameInOrder() {
     cout<<"name in order:\n";
     for_each(begin(map1),end(map1),[](pair<string,set<string>>a){cout<<a.first<<endl;});//print name in order
 }
-
+//this function will print person who visit both Krusty-Burger and Tavern
 void Surveillance::krustyBurgerAndTavern() {
     cout<<"List the people who visited both Krusty-Burger and Tavern:"<<endl;
     for_each(begin(map1),end(map1),[](pair<string,set<string>>a){
@@ -46,7 +47,7 @@ void Surveillance::krustyBurgerAndTavern() {
     });
 
 }
-
+//this function will print person who did NOT visit Krusty-Burger and Home
 void Surveillance::notKrustyBurgerAndHome() {
     cout<<"List the people who did NOT visit Krusty-Burger and Home"<<endl;
     for_each(begin(map1),end(map1),[](pair<string,set<string>>a){
@@ -55,7 +56,7 @@ void Surveillance::notKrustyBurgerAndHome() {
     });
 
 }
-
+//this function will print person who  visited Krusty-Burger and School but did NOT visit Tavern and Home
 void Surveillance::krustyBurgerAndSchoolNotTavernAndHome() {
     cout<<"List the people who visited Krusty-Burger and School but did NOT visit Tavern and Home";
     for_each(begin(map1),end(map1),[](pair<string,set<string>>a){
@@ -66,7 +67,7 @@ void Surveillance::krustyBurgerAndSchoolNotTavernAndHome() {
 
 
 }
-
+//this function will print person who visited all locations and remove them from your list and remove them
 void Surveillance::printRemovePeopleAllLocation() {
     cout<<"List the people who visited all locations and remove them from your list";
     for_each(begin(map1),end(map1),[&](pair<string,set<string>>a){
@@ -80,7 +81,7 @@ void Surveillance::printRemovePeopleAllLocation() {
     });
 
 }
-
+//this function process action in order
 void Surveillance::process() {
      printNameInOrder();
      krustyBurgerAndTavern();

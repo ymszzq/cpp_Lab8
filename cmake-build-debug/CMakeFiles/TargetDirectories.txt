@@ -1,0 +1,3 @@
+C:/Users/gmziv/Documents/git/3512/Lab8/cpp_Lab8/cmake-build-debug/CMakeFiles/Lab8.dir
+C:/Users/gmziv/Documents/git/3512/Lab8/cpp_Lab8/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/gmziv/Documents/git/3512/Lab8/cpp_Lab8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
